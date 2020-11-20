@@ -22,15 +22,15 @@ def cadastro_fornecedor():
     #verifica se a area de atuação não esta em branco
     while len(fornecedor_area) < 2:
         fornecedor_area = input("qual sua area de atuação: ")
-        if (len(fornecedor.area)) < 2:
+        if (len(fornecedor_area)) < 2:
             print("nome muito curto, tente denovo")
-            
+
     #verifica se o email é valido
     while (len(fornecedor_email) < 6) or (arroba not in fornecedor_email or pontocom not in fornecedor_email):
         
         fornecedor_email = input("digite o seu email: ")
         if (len(fornecedor_email) < 6) or (arroba not in fornecedor_email or pontocom not in fornecedor_email):
-            print("email invalido")
+            print("email invalido, digite um email valido")
                 
 
     #verifica se o numero tem pelo menos 9 digitos, se não pede novamente
