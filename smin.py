@@ -13,8 +13,14 @@ def cadastro_fornecedor():
     
     fornecedor_area = input("qual sua area de atuação: ")
     fornecedor_email = input("digite o seu email: ")
-    fornecedor_telefone = input("digite o seu telefone: ")
+    fornecedor_telefone = ""
     fornecedor_cpf = ""
+
+    #verifica se o numero tem pelo menos 9 digitos, se não pede novamente
+    while len(fornecedor_telefone) < 9:
+        fornecedor_telefone = input("digite o seu telefone: ")
+        if len(fornecedor_telefone) < 9:
+            print("numero incompleto")
 
     #verifica se o cpf tem pelo menos 10 digitos, se não pede cpf novamente
     while len(fornecedor_cpf) < 10:
@@ -33,7 +39,7 @@ def cadastro_fornecedor():
     lista_fornecedores.append(fornecedor)
     print("cadastro realizado com sucesso!")
     print(lista_fornecedores)
-    
+
 while True: 
     menu = input("oque deseja fazer? \n 1-cadastrar fronecedor")
 
