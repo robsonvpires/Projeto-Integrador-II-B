@@ -11,21 +11,38 @@ def cadastro_fornecedor():
 
     fornecedor_nome = input("digite seu nome completo: ")
     
-    fornecedor_area = input("qual sua area de atuação: ")
-    fornecedor_email = input("digite o seu email: ")
+    fornecedor_area = ""
+    fornecedor_email = ""
+    arroba = "@"
+    pontocom = ".com"
+    
     fornecedor_telefone = ""
     fornecedor_cpf = ""
+
+    #verifica se a area de atuação não esta em branco
+    while len(fornecedor_area) < 2:
+        fornecedor_area = input("qual sua area de atuação: ")
+        if (len(fornecedor.area)) < 2:
+            print("nome muito curto, tente denovo")
+            
+    #verifica se o email é valido
+    while (len(fornecedor_email) < 6) or (arroba not in fornecedor_email or pontocom not in fornecedor_email):
+        
+        fornecedor_email = input("digite o seu email: ")
+        if (len(fornecedor_email) < 6) or (arroba not in fornecedor_email or pontocom not in fornecedor_email):
+            print("email invalido")
+                
 
     #verifica se o numero tem pelo menos 9 digitos, se não pede novamente
     while len(fornecedor_telefone) < 9:
         fornecedor_telefone = input("digite o seu telefone: ")
         if len(fornecedor_telefone) < 9:
-            print("numero incompleto")
+            print("numero incompleto, pelo menos 9 digitos")
 
-    #verifica se o cpf tem pelo menos 10 digitos, se não pede cpf novamente
-    while len(fornecedor_cpf) < 10:
+    #verifica se o cpf tem o numero certo de digitos, se não pede cpf novamente
+    while len(fornecedor_cpf) != 11 :
         fornecedor_cpf = input("digite o seu CPF/CNPJ: ")
-        if len(fornecedor_cpf) < 10:
+        if len(fornecedor_cpf) != 11:
             print("cpf não valido")
          
     #adiciona todos os itens na lista do fornecedor
