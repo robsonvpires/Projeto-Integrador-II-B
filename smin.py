@@ -9,8 +9,8 @@ def cadastro_fornecedor():
     #lista com os produtos que o fornecedores criar
     lista_produtos = []
 
-    fornecedor_nome = input("digite seu nome completo: ")
-    
+    fornecedor_nome = ""
+    espaco = " "
     fornecedor_area = ""
     fornecedor_email = ""
     arroba = "@"
@@ -18,6 +18,12 @@ def cadastro_fornecedor():
     
     fornecedor_telefone = ""
     fornecedor_cpf = ""
+
+    #verifica se o nome não esta em branco
+    while (len(fornecedor_nome) < 3) or (espaco not in fornecedor_nome):
+        fornecedor_nome = input("digite seu nome completo(nome e sobrenome): ")
+        if (len(fornecedor_nome) < 3) or (espaco not in fornecedor_nome):
+            print("digite nome e sobrenome separados por espaço")
 
     #verifica se a area de atuação não esta em branco
     while len(fornecedor_area) < 2:
