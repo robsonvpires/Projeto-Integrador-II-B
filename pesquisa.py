@@ -1,17 +1,17 @@
 
-lista_dados = [{'nome': 'dart', 'área_de_atuação': 'dart area', 'email': 'dar@gmail.com', 'telefone': '321', 'cnpj/cpf': '123456', 'lista_de_especialidades':''}, 
-               {'nome': 'shot', 'área_de_atuação': 'shot area', 'email': 'shot@gmail.com', 'telefone': '123', 'cnpj/cpf': '567876', 'lista_de_especialidades':''}]
+lista_dados = [{'nome': 'relogios', 'descrição': 'vendo e compro relogios', 'ID': '1', 'categoria': 'venda', 'consultor': 'romario'},
+                {'nome': 'cadeiras', 'descrição': 'vendo e compro cadeiras', 'ID': '2', 'categoria': 'venda', 'consultor': 'cezar'}]
 
-def cadastro_consultor():
-
+def cadastro_especialidade():       
     dados = dict()
     dados ['nome'] = input('Nome')
-    dados ['área_de_atuação'] = input('Área de Atuação')
-    dados ['email'] = input('E-mail')
-    dados ['telefone'] = input('Telefone')
-    dados ['cnpj/cpf'] = input('CNPJ/CPF')
-    dados ['lista_de_especialidades'] = input('Lista de Especialidades')
-    print(dados) 
+    dados ['descrição'] = input('Descrição')
+    dados ['ID'] = input('ID')
+    dados ['categoria'] = input('Caregoria')
+    dados ['consultor'] = input('Consultor')
+    lista_dados.append(dados)
+
+    print(lista_dados) 
 
 def pesquisa_consultor():
     pesquisa = input("digite a sua pesquisa: ")
@@ -21,14 +21,14 @@ def pesquisa_consultor():
 
     for i in range(tamanho):
         if pesquisa in (lista_dados[i]['nome']):
-            lista_pesquisa.append(lista_dados[i]['nome'])
+            lista_pesquisa.append(lista_dados[i]['consultor'])
 
     print(f"foram encontrados os seguintes consultores: \n {lista_pesquisa}")
 
 while True:
-    menu = input("oque deseja fazer?\n1-cadastrar consultor\n2-pesquisar consultor")
+    menu = input("oque deseja fazer?\n1-cadastrar especialidade\n2-pesquisar por especialidade")
     
     if menu == "1":
-        cadastro_consultor()
+        cadastro_especialidade()
     elif menu == "2":
         pesquisa_consultor()
